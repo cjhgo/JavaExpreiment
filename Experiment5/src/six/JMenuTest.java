@@ -1,8 +1,9 @@
-package gui;
+package six;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
-public class JMenuTest implements ActionListener, MouseListener {	
+public class JMenuTest implements ActionListener, MouseListener {
+	//定义菜单栏,菜单,菜单项,面板,窗口
 	private JMenuBar jmb;
 	private JMenu SelectOperation, SelectColor_1,SelectColor_2;	
 	private JPopupMenu jpm;
@@ -11,6 +12,7 @@ public class JMenuTest implements ActionListener, MouseListener {
 	private JPanel jp;
 	private JFrame jf;	
 	void run() {
+		//创建实例,设置属性
 		jf = new JFrame();
 		jp = new JPanel();
 		jpm = new JPopupMenu();		
@@ -57,6 +59,7 @@ public class JMenuTest implements ActionListener, MouseListener {
 		jf.setSize(500, 400);
 		jf.setLocation(400,200);		
 		jf.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);		
+		//注册监听器
 		jp.addMouseListener(this);		
 		red_1.addActionListener(this);	
 		red_2.addActionListener(this);	
@@ -68,12 +71,15 @@ public class JMenuTest implements ActionListener, MouseListener {
 		exit_2.addActionListener(this);
 	}	
 	public static void main(String[] args) {
+		//创建实例运行
 		new JMenuTest().run();
 	}
 	@Override
-	public void actionPerformed(ActionEvent e) {		
+	public void actionPerformed(ActionEvent e) {	
+		//选中菜单和弹出式菜单中的退出按钮后程序退出,
 		if(e.getSource().equals(exit_1)||e.getSource().equals(exit_2)) 
 			System.exit(0);	
+		//通过按钮设置面板背景色
 		else if(e.getSource().equals(red_1) || e.getSource().equals(red_2))
 			jp.setBackground(Color.red);
 		else if(e.getSource().equals(green_1) || e.getSource().equals(green_2))
@@ -82,6 +88,7 @@ public class JMenuTest implements ActionListener, MouseListener {
 			jp.setBackground(Color.blue);					
 	}
 	@Override
+	//在面板上点击鼠标右键是弹出菜单
 	public void mouseClicked(MouseEvent e) {		
 		if(e.getSource().equals(jp)) {
 			if(e.getButton()==MouseEvent.BUTTON3) {				
