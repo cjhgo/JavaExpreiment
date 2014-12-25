@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<web-app>
+	<display-name>
+	</display-name>
+	<description>
+	</description>
+ <servlet>
+      <servlet-name>sercet</servlet-name>
+      <servlet-class>test.Chen</servlet-class>
+   </servlet>
+
+   
+   
+
+   <servlet-mapping>
+      <servlet-name>sercet</servlet-name>
+      <url-pattern>/gun</url-pattern>
+   </servlet-mapping>
+</web-app>

@@ -1,0 +1,46 @@
+<html>
+  <head>
+<Script language="javascript">
+	function check() {
+		if (isNaN(form1.math.value)) {
+			alert("数学成绩只能为数字！");
+			form1.math.focus();
+			return false;
+		}
+		if (isNaN(form1.english.value)) {
+			alert("英语成绩只能为数字！");
+			form1.english.focus();
+			return false;
+		}
+		if (isNaN(form1.history.value)) {
+			alert("历史成绩只能为数字！");
+			form1.history.focus();
+			return false;
+		}
+		if (isNaN(form1.stuid.value)) {
+			alert("学号只能为数字！");
+			form1.stuid.focus();
+			return false;
+		}
+		if (form1.stuid.value.length == 0) {
+			alert("学号不能为空！");
+			form1.stuid.focus();
+			return false;
+		}
+	}
+</Script>
+<title>使用JavaBean向数据库添加记录</title>	
+  </head>  
+  <body>
+<form name="form1" method="get" action="beaninsert.jsp">
+学号:<input type="text" name="stuid"><BR>
+姓名:<input type="text" name="stuname"><BR>
+数学:<input type="text" name="math"><BR>
+英语:<input type="text" name="english"><BR>
+历史:<input type="text" name="history"><BR>
+<BR>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" value="添加"  onClick="return check()">
+</form>
+   </body>
+</html>
